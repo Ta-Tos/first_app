@@ -1,0 +1,15 @@
+<h1>新規投稿ページ</h1>
+
+<!-- <form action="/posts" method="post"> 
+  <input type="text" name="content">
+  <input type="submit" value="投稿する">
+</form> 
+通常のHTMLの記述 -->
+
+<!--ヘルパーメソッドの記述-->
+<%= form_with url:"/posts",method: :post, local: true do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit '投稿する' %>
+<% end %>
+
+<%= link_to "戻る" , "/posts" %>
